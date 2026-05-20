@@ -8,6 +8,9 @@ export class RegisterFormComponent extends BaseComponent {
     readonly passwordInput: Locator;
     readonly repeatPasswordInput: Locator;
     readonly registerButton: Locator;
+    readonly nameRequiredError: Locator;
+    readonly nameInvalidLengthError: Locator;
+    readonly nameInvaledCharactersError: Locator;
 
     constructor(page: Page) {
         const root = page.locator('.modal-content');
@@ -19,6 +22,9 @@ export class RegisterFormComponent extends BaseComponent {
         this.passwordInput = this.root.locator('input[id="signupPassword"]');
         this.repeatPasswordInput = this.root.locator('input[id="signupRepeatPassword"]');
         this.registerButton = this.root.getByRole("button", { name: "Register" });
+        this.nameRequiredError = page.getByText("Name required");
+        this.nameInvalidLengthError = page.getByText("Name has to be from 2 to 20 characters long");
+        this.nameInvaledCharactersError = page.getByText("Name is invalid");
     }
 
     public async fillNameInput(name: string) {
