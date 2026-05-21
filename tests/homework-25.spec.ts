@@ -75,4 +75,10 @@ test.describe('Login tests', () => {
 
         await expect(mainLandingPage.registerForm.nameInvaledCharactersError).toBeVisible();
     })
-});
+
+    test('TC6 - Open url from env variable', async ({ page }) => {
+        const mainLandingPage = new MainLandingPage(page);
+        await page.goto('/');
+        await mainLandingPage.expectOpened();
+    })
+})

@@ -1,4 +1,5 @@
 import { defineConfig } from '@playwright/test';
+import 'dotenv/config';
 
 export default defineConfig({
   testDir: './tests',
@@ -6,7 +7,13 @@ export default defineConfig({
   timeout: 30000,
 
   use: {
-    baseURL: 'https://qauto.forstudy.space/',
+    //baseURL: 'https://qauto.forstudy.space/',
+    baseURL: process.env.BASE_URL,
+    httpCredentials: {
+      username: process.env.USER_NAME!,
+      password: process.env.USER_PASSWORD!
+
+    },
 
     headless: false,
 

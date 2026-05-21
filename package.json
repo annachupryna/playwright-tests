@@ -18,6 +18,9 @@
   "homepage": "https://github.com/annachupryna/playwright-tests#readme",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.2"
+    "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
