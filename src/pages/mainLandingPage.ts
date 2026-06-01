@@ -28,5 +28,4 @@ export class MainLandingPage extends BasePage {
     async expectOpened() {
         await expect(this.singUpButton).toBeVisible();
     }
-
 }
