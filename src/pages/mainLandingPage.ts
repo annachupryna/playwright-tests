@@ -1,6 +1,6 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './basePage';
-import { RegisterFormComponent } from '../components/registerFormComponent';
+import { RegisterFormComponent } from '../components/RegisterFormComponent';
 import { routes } from '../constants/routes';
 
 export class MainLandingPage extends BasePage {

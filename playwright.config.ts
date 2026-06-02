@@ -1,17 +1,34 @@
-import { defineConfig } from '@playwright/test';
-import 'dotenv/config';
+import { defineConfig, devices } from '@playwright/test';
+//import 'dotenv/config';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
 
   timeout: 30000,
 
+  projects: [
+    {
+      name: 'setup',
+      testMatch: '**/auth.setup.ts',
+    },
+    {
+      name: 'chromium',
+      dependencies: ['setup'],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: '.auth/user.json'
+      }
+    },
+  ],
+
   use: {
-    //baseURL: 'https://qauto.forstudy.space/',
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL || 'https://qauto.forstudy.space',
     httpCredentials: {
-      username: process.env.USER_NAME!,
-      password: process.env.USER_PASSWORD!
+      username: process.env.HTTP_USERNAME!,
+      password: process.env.HTTP_PASSWORD!
 
     },
 
