@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { randomLetters } from "../helpers/utils";
 
 test("TC1 - Positive register", async ({ page }) => {
-    await page.goto("/");
+    await page.goto(process.env.BASE_URL!);
     console.log('HTTP_USERNAME length:', process.env.HTTP_USERNAME?.length);
     console.log('HTTP_PASSWORD length:', process.env.HTTP_PASSWORD?.length);
     console.log(await page.content());
