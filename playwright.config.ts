@@ -35,7 +35,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.BASE_URL || 'https://qauto.forstudy.space',
+    baseURL: process.env.BASE_URL || 'https://guest:welcome2qauto@qauto.forstudy.space',
     httpCredentials: {
       username: process.env.HTTP_USERNAME!,
       password: process.env.HTTP_PASSWORD!
