@@ -2,6 +2,9 @@ import { test, expect } from "@playwright/test";
 import { randomLetters } from "../helpers/utils";
 
 test("TC1 - Positive register", async ({ page }) => {
+    console.log('URL:', page.url());
+    console.log('BASE_URL:', process.env.BASE_URL);
+    await page.screenshot({ path: 'debug.png', fullPage: true });
     await page.goto("/");
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
