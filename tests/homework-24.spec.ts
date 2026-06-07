@@ -4,6 +4,8 @@ import { randomLetters } from "../helpers/utils";
 test("TC1 - Positive register", async ({ page }) => {
     await page.goto("/");
     console.log('URL after goto:', page.url());
+    console.log('HTTP_USERNAME exists:', !!process.env.HTTP_USERNAME);
+    console.log('HTTP_PASSWORD exists:', !!process.env.HTTP_PASSWORD);
     console.log(await page.content());
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
