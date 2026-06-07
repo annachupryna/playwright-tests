@@ -25,6 +25,12 @@ export default defineConfig({
     {
       name: 'homework-24',
       testMatch: '**/homework-24.spec.ts',
+      use: {
+        httpCredentials: {
+          username: process.env.HTTP_USERNAME!,
+          password: process.env.HTTP_PASSWORD!
+        }
+      }
     }
   ],
 
