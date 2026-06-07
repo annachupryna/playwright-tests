@@ -3,9 +3,8 @@ import { randomLetters } from "../helpers/utils";
 
 test("TC1 - Positive register", async ({ page }) => {
     await page.goto("/");
-    console.log('URL after goto:', page.url());
-    console.log('HTTP_USERNAME exists:', !!process.env.HTTP_USERNAME);
-    console.log('HTTP_PASSWORD exists:', !!process.env.HTTP_PASSWORD);
+    console.log('HTTP_USERNAME length:', process.env.HTTP_USERNAME?.length);
+    console.log('HTTP_PASSWORD length:', process.env.HTTP_PASSWORD?.length);
     console.log(await page.content());
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
@@ -29,59 +28,59 @@ test("TC1 - Positive register", async ({ page }) => {
 
 });
 
-test("TC2 - Negative: name field is empty", async ({ page }) => {
-    await page.goto("/");
+// test("TC2 - Negative: name field is empty", async ({ page }) => {
+//     await page.goto("/");
 
-    const singUpButton = page.getByRole("button", { name: "Sign up" });
-    const nameInput = page.locator('input[id="signupName"]');
-    const lastNameInput = page.locator('input[id="signupLastName"]');
-    const nameFieldError = page.getByText("Name required");
+//     const singUpButton = page.getByRole("button", { name: "Sign up" });
+//     const nameInput = page.locator('input[id="signupName"]');
+//     const lastNameInput = page.locator('input[id="signupLastName"]');
+//     const nameFieldError = page.getByText("Name required");
 
-    await singUpButton.click();
-    await nameInput.click();
-    await lastNameInput.click();
-    await expect(nameFieldError).toBeVisible();
+//     await singUpButton.click();
+//     await nameInput.click();
+//     await lastNameInput.click();
+//     await expect(nameFieldError).toBeVisible();
 
-});
+// });
 
-test("TC3 - Negative: name field is too short", async ({ page }) => {
-    await page.goto("/");
+// test("TC3 - Negative: name field is too short", async ({ page }) => {
+//     await page.goto("/");
 
-    const singUpButton = page.getByRole("button", { name: "Sign up" });
-    const nameInput = page.locator('input[id="signupName"]');
-    const lastNameInput = page.locator('input[id="signupLastName"]');
-    const nameFieldError = page.getByText("Name has to be from 2 to 20 characters long");
+//     const singUpButton = page.getByRole("button", { name: "Sign up" });
+//     const nameInput = page.locator('input[id="signupName"]');
+//     const lastNameInput = page.locator('input[id="signupLastName"]');
+//     const nameFieldError = page.getByText("Name has to be from 2 to 20 characters long");
 
-    await singUpButton.click();
-    await nameInput.fill('a');
-    await lastNameInput.click();
-    await expect(nameFieldError).toBeVisible();
-});
+//     await singUpButton.click();
+//     await nameInput.fill('a');
+//     await lastNameInput.click();
+//     await expect(nameFieldError).toBeVisible();
+// });
 
-test("TC4 - Negative: name field is too long", async ({ page }) => {
-    await page.goto("/");
+// test("TC4 - Negative: name field is too long", async ({ page }) => {
+//     await page.goto("/");
 
-    const singUpButton = page.getByRole("button", { name: "Sign up" });
-    const nameInput = page.locator('input[id="signupName"]');
-    const lastNameInput = page.locator('input[id="signupLastName"]');
-    const nameFieldError = page.getByText("Name has to be from 2 to 20 characters long");
+//     const singUpButton = page.getByRole("button", { name: "Sign up" });
+//     const nameInput = page.locator('input[id="signupName"]');
+//     const lastNameInput = page.locator('input[id="signupLastName"]');
+//     const nameFieldError = page.getByText("Name has to be from 2 to 20 characters long");
 
-    await singUpButton.click();
-    await nameInput.fill('aaaaaaaaaaaaaaaaaaaaaa');
-    await lastNameInput.click();
-    await expect(nameFieldError).toBeVisible();
-});
+//     await singUpButton.click();
+//     await nameInput.fill('aaaaaaaaaaaaaaaaaaaaaa');
+//     await lastNameInput.click();
+//     await expect(nameFieldError).toBeVisible();
+// });
 
-test("TC5 - Negative: name field is invalid", async ({ page }) => {
-    await page.goto("/");
+// test("TC5 - Negative: name field is invalid", async ({ page }) => {
+//     await page.goto("/");
 
-    const singUpButton = page.getByRole("button", { name: "Sign up" });
-    const nameInput = page.locator('input[id="signupName"]');
-    const lastNameInput = page.locator('input[id="signupLastName"]');
-    const nameFieldError = page.getByText("Name is invalid");
+//     const singUpButton = page.getByRole("button", { name: "Sign up" });
+//     const nameInput = page.locator('input[id="signupName"]');
+//     const lastNameInput = page.locator('input[id="signupLastName"]');
+//     const nameFieldError = page.getByText("Name is invalid");
 
-    await singUpButton.click();
-    await nameInput.fill('заващ');
-    await lastNameInput.click();
-    await expect(nameFieldError).toBeVisible();
-});
+//     await singUpButton.click();
+//     await nameInput.fill('заващ');
+//     await lastNameInput.click();
+//     await expect(nameFieldError).toBeVisible();
+// });

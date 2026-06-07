@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 //import 'dotenv/config';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-// dotenv.config();
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
