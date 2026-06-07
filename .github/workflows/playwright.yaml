@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Run Playwright tests
-        run: npx playwright test --reporter=html
+        run: npx playwright test homework-24.spex.ts --project=homework-24
 
       - name: Show files after tests
         if: always()
