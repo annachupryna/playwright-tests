@@ -1,17 +1,23 @@
 import { test as base, expect, Page } from '@playwright/test';
+import { GaragePage } from '../../src/pages/garagePage';
 
 
 type QAutoFixtures = {
-    userGaragePage: Page;
+    garagePage: GaragePage;
 };
 
 export const test = base.extend<QAutoFixtures>({
-    userGaragePage: async ({ page }, use) => {
-        await page.goto('/panel/garage');
-        await expect(page).toHaveURL(/panel\/garage/);
+    garagePage: async ({ page }, use) => {
+        const garagePage = new GaragePage(page);
+        await garagePage.open('/panel/garage');
+        await use(garagePage);
 
 
-        await use(page);
+        // await page.goto('/panel/garage');
+        // await expect(page).toHaveURL(/panel\/garage/);
+
+
+        // await use(page);
     },
 
 });

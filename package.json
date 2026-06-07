@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "debug": "npx playwright test --debug",
+    "list": "npx playwright test --list",
+    "test:qa": "set TEST_ENV='QA' && npx playwright test --ui",
+    "test:stage": "set TEST_ENV='STAGE' && npx playwright test --list"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/annachupryna/playwright-tests.git"

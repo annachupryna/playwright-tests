@@ -22,6 +22,10 @@ export default defineConfig({
         storageState: '.auth/user.json'
       }
     },
+    {
+      name: 'homework-24',
+      testMatch: '**/homework-24.spec.ts',
+    }
   ],
 
   use: {
