@@ -61,3 +61,4 @@ test.describe('Create car via API', () => {
         expect(body.message).toBe('Mileage has to be from 0 to 999999');
     });
 });
+
