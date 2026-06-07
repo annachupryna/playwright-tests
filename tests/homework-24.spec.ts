@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { randomLetters } from "../helpers/utils";
 
 test("TC1 - Positive register", async ({ page }) => {
-    await page.goto('/');
+    await page.goto('https://guest:welcome2qauto@qauto.forstudy.space');
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
     const nameInput = page.locator('input[id="signupName"]');
@@ -26,7 +26,7 @@ test("TC1 - Positive register", async ({ page }) => {
 });
 
 test("TC2 - Negative: name field is empty", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("https://guest:welcome2qauto@qauto.forstudy.space");
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
     const nameInput = page.locator('input[id="signupName"]');
@@ -41,7 +41,7 @@ test("TC2 - Negative: name field is empty", async ({ page }) => {
 });
 
 test("TC3 - Negative: name field is too short", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("https://guest:welcome2qauto@qauto.forstudy.space");
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
     const nameInput = page.locator('input[id="signupName"]');
@@ -55,7 +55,7 @@ test("TC3 - Negative: name field is too short", async ({ page }) => {
 });
 
 test("TC4 - Negative: name field is too long", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("https://guest:welcome2qauto@qauto.forstudy.space");
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
     const nameInput = page.locator('input[id="signupName"]');
@@ -69,7 +69,7 @@ test("TC4 - Negative: name field is too long", async ({ page }) => {
 });
 
 test("TC5 - Negative: name field is invalid", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("https://guest:welcome2qauto@qauto.forstudy.space");
 
     const singUpButton = page.getByRole("button", { name: "Sign up" });
     const nameInput = page.locator('input[id="signupName"]');
